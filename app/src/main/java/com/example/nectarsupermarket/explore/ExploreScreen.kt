@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.nectarsupermarket.Constants
 import com.example.nectarsupermarket.utils.NectarSearchBar
+import com.example.nectarsupermarket.utils.sdp
 
 
 @Composable
@@ -36,18 +37,18 @@ fun ExploreContent(viewModel: ShopViewModel = viewModel(),
         modifier = Modifier
             .background(Color.White)
             .fillMaxSize(1f)
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
             
     ) {
 
         NectarSearchBar(searchQuery = viewModel.searchQuery, searchActive = viewModel.searchActive)
         
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(15.sdp))
 
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(15.dp),
-            horizontalArrangement = Arrangement.spacedBy(15.dp),
+            verticalArrangement = Arrangement.spacedBy(15.sdp),
+            horizontalArrangement = Arrangement.spacedBy(15.sdp),
         ) {
 
             if (viewModel.isLoading.value == true) {
@@ -83,6 +84,6 @@ fun ExploreContent(viewModel: ShopViewModel = viewModel(),
             }
         }
         
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(15.sdp))
     }
 }

@@ -44,6 +44,8 @@ import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.ui.theme.greyLabels
 
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -77,10 +79,10 @@ Column (modifier = Modifier.background(Color.White)){
 
     )
 
-    Spacer(modifier = Modifier.height(20.dp))
+    Spacer(modifier = Modifier.height(20.sdp))
 
     Column(
-        modifier = Modifier.padding(start = 20.dp, end = 20.dp)
+        modifier = Modifier.padding(start = 20.sdp, end = 20.sdp)
     ) {
 
 
@@ -93,18 +95,18 @@ Column (modifier = Modifier.background(Color.White)){
                     text = viewModel.selectedProduct.value?.name?:"",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
+                    fontSize = 24.ssp,
                     color = Color.Black,
                     modifier = Modifier.align(Alignment.Start)
                 )
 
-                Spacer(modifier = Modifier.height(5.dp))
+                Spacer(modifier = Modifier.height(5.sdp))
 
                 Text(
                     text = viewModel.selectedProduct.value?.unit?:"",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 16.sp,
+                    fontSize = 16.ssp,
                     color = greyLabels,
                     modifier = Modifier.align(Alignment.Start)
                 )
@@ -146,7 +148,7 @@ Column (modifier = Modifier.background(Color.White)){
             )
         }
 
-        Spacer(modifier = Modifier.height(25.dp))
+        Spacer(modifier = Modifier.height(25.sdp))
 
         Row(
             verticalAlignment = Alignment.CenterVertically
@@ -160,8 +162,8 @@ Column (modifier = Modifier.background(Color.White)){
                 },
                 colors = IconButtonDefaults.iconButtonColors(Color.Transparent),
                 modifier = Modifier
-                    .background(Color.Transparent, RoundedCornerShape(17.dp))
-                    .border(1.dp, greyLabels, RoundedCornerShape(17.dp))
+                    .background(Color.Transparent, RoundedCornerShape(17.sdp))
+                    .border(1.sdp, greyLabels, RoundedCornerShape(17.sdp))
 
             ) {
 
@@ -173,19 +175,19 @@ Column (modifier = Modifier.background(Color.White)){
 
             }
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(20.sdp))
 
             Text(
                 text = viewModel.selectedAmountOfProducts.value.toString(),
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 20.sp,
+                fontSize = 20.ssp,
                 color = Color.Black,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.width(20.dp)
+                modifier = Modifier.width(20.sdp)
             )
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(20.sdp))
 
             IconButton(
                 onClick = {
@@ -195,8 +197,8 @@ Column (modifier = Modifier.background(Color.White)){
                 },
                 colors = IconButtonDefaults.iconButtonColors(Color.Transparent),
                 modifier = Modifier
-                    .background(Color.Transparent, RoundedCornerShape(17.dp))
-                    .border(1.dp, greyLabels, RoundedCornerShape(17.dp))
+                    .background(Color.Transparent, RoundedCornerShape(17.sdp))
+                    .border(1.sdp, greyLabels, RoundedCornerShape(17.sdp))
 
             ) {
 
@@ -214,32 +216,32 @@ Column (modifier = Modifier.background(Color.White)){
                 text = "${viewModel.totalItemPrice.value?:0}" + " LE",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 22.sp,
+                fontSize = 22.ssp,
                 color = Color.Black
             )
         }
 
-        Spacer(modifier = Modifier.height(25.dp))
+        Spacer(modifier = Modifier.height(25.sdp))
 
-        HorizontalDivider(color = greyLabels, thickness = 1.dp)
+        HorizontalDivider(color = greyLabels, thickness = 1.sdp)
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         Text(
             text = "Product Details",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 18.sp,
+            fontSize = 18.ssp,
             color = Color.Black
         )
 
-        Spacer(modifier = Modifier.height(5.dp))
+        Spacer(modifier = Modifier.height(5.sdp))
 
         Text(
             text = viewModel.selectedProduct.value?.desc?:"",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 13.sp,
+            fontSize = 13.ssp,
             color = greyLabels
         )
 
@@ -256,25 +258,25 @@ Column (modifier = Modifier.background(Color.White)){
 
 
             },
-            shape = RoundedCornerShape(19.dp),
+            shape = RoundedCornerShape(19.sdp),
             colors = ButtonDefaults.buttonColors(greenPrimary),
             modifier = Modifier
                 .fillMaxWidth(1f)
-                .height(65.dp)
+                .height(65.sdp)
         ) {
 
             Text(
                 text = "Add to Basket",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.White
             )
 
         }
 
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
     }
 

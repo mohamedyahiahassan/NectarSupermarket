@@ -31,6 +31,8 @@ import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.utils.PermissionDialog
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 import com.google.android.gms.location.LocationServices
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapUiSettings
@@ -116,7 +118,7 @@ fun MapsContent(viewModel: MapViewModel = viewModel(), navigateBack:(address:Str
         
         IconButton(
             modifier = Modifier
-                .padding(end = 20.dp, bottom = 120.dp)
+                .padding(end = 20.sdp, bottom = 120.sdp)
                 .align(Alignment.BottomEnd),
             onClick = {
 
@@ -132,7 +134,7 @@ fun MapsContent(viewModel: MapViewModel = viewModel(), navigateBack:(address:Str
             Image(
                 painter = painterResource(id = R.drawable.mylocation_icon),
                 contentDescription = "go to your location",
-                modifier = Modifier.size(64.dp))
+                modifier = Modifier.size(64.sdp))
 
         }
 
@@ -150,12 +152,12 @@ fun MapsContent(viewModel: MapViewModel = viewModel(), navigateBack:(address:Str
                navigateBack(viewModel.addressAsString.value)
 
             },
-            shape = RoundedCornerShape(19.dp),
+            shape = RoundedCornerShape(19.sdp),
             colors = ButtonDefaults.buttonColors(greenPrimary),
             modifier = Modifier
-                .padding(start = 20.dp, end = 20.dp, bottom = 25.dp)
+                .padding(start = 20.sdp, end = 20.sdp, bottom = 25.sdp)
                 .fillMaxWidth(1f)
-                .height(65.dp)
+                .height(65.sdp)
                 .align(Alignment.BottomCenter)
         ) {
 
@@ -163,7 +165,7 @@ fun MapsContent(viewModel: MapViewModel = viewModel(), navigateBack:(address:Str
                 text = "Confirm Location",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.White
             )
 

@@ -24,7 +24,7 @@ fun MultiStyleText(text1: String, color1: Color, text2: String, color2: Color,on
     },
         fontFamily = gilroyFont,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,
+        fontSize = 16.ssp,
         color = Color.Black,
         modifier = Modifier.clickable {
 

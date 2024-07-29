@@ -33,6 +33,8 @@ import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.utils.WideButton
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun OrderAcceptedScreen( navigateToHome:()->Unit,trackOrder:()->Unit) {
@@ -41,7 +43,7 @@ fun OrderAcceptedScreen( navigateToHome:()->Unit,trackOrder:()->Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize(1f)
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
     ) {
 
         Spacer(modifier = Modifier.weight(1f))
@@ -56,18 +58,18 @@ fun OrderAcceptedScreen( navigateToHome:()->Unit,trackOrder:()->Unit) {
             text = "Your Order has been\naccepted",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 28.sp,
+            fontSize = 28.ssp,
             color = Color.Black,
             textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(30.sdp))
 
         Text(
             text = "Your items has been placed and is on\nit's way to being processed",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = greyLabels,
             textAlign = TextAlign.Center
         )
@@ -93,7 +95,7 @@ fun OrderAcceptedScreen( navigateToHome:()->Unit,trackOrder:()->Unit) {
                 text = "Back to home",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Medium,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.Black,
             )
 

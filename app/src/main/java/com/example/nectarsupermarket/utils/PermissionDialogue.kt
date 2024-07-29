@@ -35,7 +35,6 @@ fun PermissionDialog(
 ) {
 
 
-
     val title = remember {
 
         mutableStateOf("Permission Required")
@@ -52,7 +51,7 @@ fun PermissionDialog(
         mutableStateOf("Grant Permission")
     }
 
-    if (isPermanentlyDenied == true){
+    if (isPermanentlyDenied == true) {
 
         title.value = "Permission Required"
 
@@ -60,7 +59,7 @@ fun PermissionDialog(
 
         buttonText.value = "Open Settings"
 
-    } else if ( isLocationTurnedOff == true){
+    } else if (isLocationTurnedOff == true) {
 
         title.value = "Access to location is disabled"
 
@@ -68,7 +67,7 @@ fun PermissionDialog(
 
         buttonText.value = "Turn on Location"
 
-    } else{
+    } else {
 
         title.value = "Permission Required"
 
@@ -77,7 +76,7 @@ fun PermissionDialog(
         buttonText.value = "Grant Permission"
     }
 
-    if (open == true){
+    if (open == true) {
 
         AlertDialog(
             icon = {
@@ -96,7 +95,7 @@ fun PermissionDialog(
                 TextButton(
                     onClick = {
 
-                        if (isPermanentlyDenied == true){
+                        if (isPermanentlyDenied == true) {
                             onGoToAppSettingsClick()
                         } else {
                             onConfirmation()
@@ -119,68 +118,4 @@ fun PermissionDialog(
         )
 
     }
-
-
-
-        /*BasicAlertDialog(
-            onDismissRequest = onDismiss,
-            modifier = modifier)
-        {
-            Column(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-
-                Text(text = "Permission required")
-
-                Text(
-                    text = "You need to grant location access to add your address")
-
-                Divider()
-                Text(
-                    text = if(isPermanentlyDeclined) {
-                        "Grant permission"
-                    } else {
-                        "OK"
-                    },
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            if (isPermanentlyDeclined) {
-                                onGoToAppSettingsClick()
-                            } else {
-                                onOkClick()
-                            }
-                        }
-                        .padding(16.dp)
-                )
-            }
-        }
-    }
-
-         */
-
-
-
 }
-
-
-/*
-interface PermissionTextProvider {
-    fun getDescription(isPermanentlyDeclined: Boolean): String
-}
-
-class CameraPermissionTextProvider: PermissionTextProvider {
-    override fun getDescription(isPermanentlyDeclined: Boolean): String {
-        return if(isPermanentlyDeclined) {
-            "It seems you permanently declined camera permission. " +
-                    "You can go to the app settings to grant it."
-        } else {
-            "This app needs access to your camera so that your friends " +
-                    "can see you in a call."
-        }
-    }
-}
-
- */

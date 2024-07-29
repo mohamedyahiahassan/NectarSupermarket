@@ -183,7 +183,7 @@ fun NectarTopAppBar(currentDestination: NavDestination?,
                 text = title.value,
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 22.sp,
+                fontSize = 22.ssp,
                 color = Color.Black,
             )
         },
@@ -231,49 +231,15 @@ fun HomeTopAppBar(){
                     color = greenPrimary,
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 36.sp,
+                    fontSize = 36.ssp,
 
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.logo_carrot_colored),
                     contentDescription = "nectar logo",
-                    Modifier.size(36.dp))
+                    Modifier.size(36.sdp))
             }
-            
-           /* Column (
-                horizontalAlignment = Alignment.CenterHorizontally
-            ){
-
-                Text(
-                    text = "Delivering to",
-                    fontFamily = gilroyFont,
-                    fontWeight = FontWeight.Thin,
-                    fontSize = 18.sp,
-                    color = Color.Black,
-                )
-
-                Row (
-                    verticalAlignment = Alignment.CenterVertically
-                ){
-
-                    Text(
-                        text = "Home",
-                        fontFamily = gilroyFont,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 22.sp,
-                        color = greenPrimary,
-                    )
-
-                    Image(
-                        painter = painterResource(id = R.drawable.arrow_down_24),
-                        contentDescription = "choose delivery location")
-
-
-                }
-            }
-            
-            */
         }
     )
 }

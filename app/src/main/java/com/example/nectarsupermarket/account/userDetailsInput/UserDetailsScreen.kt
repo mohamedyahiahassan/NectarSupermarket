@@ -48,6 +48,8 @@ import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.utils.LoadingDialog
 import com.example.nectarsupermarket.utils.LoginTextField
 import com.example.nectarsupermarket.utils.WideButton
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -114,8 +116,8 @@ fun UserDetailsContent(
             .fillMaxSize(1f)
             .background(Color.White)
             .padding(
-                start = 20.dp,
-                end = 20.dp,
+                start = 20.sdp,
+                end = 20.sdp,
                 top = windowInsets
                     .asPaddingValues()
                     .calculateTopPadding()
@@ -133,7 +135,7 @@ fun UserDetailsContent(
                 contentDescription = "account pic",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(200.dp)
+                    .size(200.sdp)
                     //.border(2.dp, greenPrimary, CircleShape)
                     .clip(CircleShape)
 
@@ -145,7 +147,7 @@ fun UserDetailsContent(
                 contentDescription = "edit mark",
                 tint = greenPrimary,
                 modifier = Modifier
-                    .padding(top = 24.dp, end = 24.dp)
+                    .padding(top = 24.sdp, end = 24.sdp)
                     .align(Alignment.TopEnd)
                     .clickable {
 
@@ -161,11 +163,11 @@ fun UserDetailsContent(
 
         }
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
         LoginTextField(viewModel.username, label = "Name", error = viewModel.usernameError)
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
         LoginTextField(
             text = viewModel.mobileNumber,
@@ -174,12 +176,12 @@ fun UserDetailsContent(
             isPhoneNumber = true
         )
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
         Text(
             text = "Location",
             color = greyLabels,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.align(Alignment.Start)
@@ -269,85 +271,21 @@ fun UserDetailsContent(
                         })
 
                 }
-           // }
 
         }
-        
-        
-
-        /*Row ( modifier = Modifier
-            .fillMaxWidth(1f)
-            .clickable {
-                openMaps()
-            },) {
-
-            if (userAddress!=null || User.appUser?.latitude!=null){
-                Text(
-                    text = viewModel.readableAddress.value,
-                    color = Color.Black,
-                    fontSize = 18.sp,
-                    fontFamily = gilroyFont,
-                    fontWeight = FontWeight.Medium
-                )
-            } else{
-
-                Spacer(modifier = Modifier.weight(1f))
-
-                IconButton(
-                    onClick = {
-                        openMaps()
-                    }) {
-
-                    Image(
-                        painter = painterResource(id = R.drawable.mylocation_icon),
-                        contentDescription = "set your location",
-                        modifier = Modifier.size(50.dp),
-                    )
-                }
-            }
-
-        }
-
-         */
-
-       // HorizontalDivider(color = Color.Black, thickness = 1.dp)
 
 
         if (viewModel.readableAddressError.value!=null){
             Text(
                 text = viewModel.readableAddressError.value?:"",
                 color = Color.Black,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Medium
             )
         }
 
-
-      /*  Button(
-            onClick = {
-                openMaps()
-            },
-            shape = RoundedCornerShape(19.dp),
-            colors = ButtonDefaults.buttonColors(greenPrimary),
-            modifier = Modifier
-                .padding(start = 20.dp, end = 20.dp, bottom = 25.dp, top = 20.dp)
-               // .height(65.dp)
-        ) {
-
-            Text(
-                text = "Select Location",
-                fontFamily = gilroyFont,
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 18.sp,
-                color = Color.White
-            )
-
-        }
-
-       */
-
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
         
         
         WideButton(buttonText = "SUBMIT") {

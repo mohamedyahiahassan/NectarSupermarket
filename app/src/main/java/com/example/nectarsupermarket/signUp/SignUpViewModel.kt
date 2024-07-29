@@ -105,12 +105,13 @@ class SignUpViewModel @Inject constructor(
                     when (it) {
 
                         is Resource.Error -> {
-                            Log.e("error", it.message.toString())
+                            Log.e("error signing up", it.message.toString())
                             emailError.value = it.message
                             isLoading.value = false
                         }
 
                         is Resource.Loading -> isLoading.value = true
+
                         is Resource.Success -> {
 
                             isLoading.value = false
@@ -122,6 +123,8 @@ class SignUpViewModel @Inject constructor(
 
                }
                 if (User.appUser != null) {
+
+                    Log.e("app user add user viewmodel",User.appUser.toString())
                     authenticationRepo.addNewUser(
 
                         User.appUser!!

@@ -401,9 +401,17 @@ class CartViewModel @Inject constructor(
 
                         orderTime = it.data?.created
 
-                        isLoadingGeneral.value = false
+                        if (customerConfig.value == null || paymentIntentClientSecret.value == null){
 
-                        isFetchingStripeDataComplete.value = true
+                            getStripePaymentDetails()
+
+                        }else{
+                            isLoadingGeneral.value = false
+
+                            isFetchingStripeDataComplete.value = true
+                        }
+
+
 
 
 

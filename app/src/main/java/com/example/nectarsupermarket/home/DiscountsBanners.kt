@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.R
+import com.example.nectarsupermarket.utils.sdp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
@@ -88,7 +89,7 @@ fun DiscountAds() {
         LazyRow(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
-                .padding(bottom = 10.dp)
+                .padding(bottom = 10.sdp)
             // .wrapContentWidth()
             //.wrapContentHeight()
 
@@ -98,21 +99,21 @@ fun DiscountAds() {
                 if (index == selectedIndex) {
                     Box(
                         modifier = Modifier
-                            .size(10.dp)
+                            .size(10.sdp)
                             .clip(CircleShape)
                             .background(selectedColor)
                     )
                 } else {
                     Box(
                         modifier = Modifier
-                            .size(10.dp)
+                            .size(10.sdp)
                             .clip(CircleShape)
                             .background(unSelectedColor)
                     )
                 }
 
                 if (index != totalDots - 1) {
-                    Spacer(modifier = Modifier.padding(horizontal = 2.dp))
+                    Spacer(modifier = Modifier.padding(horizontal = 2.sdp))
                 }
             }
         }

@@ -38,6 +38,8 @@ import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.ui.theme.greyBorder
 import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.utils.LoadingDialog
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.paymentsheet.rememberPaymentSheet
 
@@ -102,7 +104,7 @@ fun CartContent(
             .fillMaxHeight(1f)
             .background(Color.White)
             .verticalScroll(rememberScrollState())
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
     ) {
 
 
@@ -110,7 +112,7 @@ fun CartContent(
             modifier = Modifier
                 .fillMaxWidth(1f)
                 .weight(1f),
-            verticalArrangement = Arrangement.spacedBy(20.dp)
+            verticalArrangement = Arrangement.spacedBy(20.sdp)
 
         ) {
 
@@ -133,9 +135,9 @@ fun CartContent(
 
                     if (index == 0) {
 
-                         HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                         HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
-                        Spacer(modifier = Modifier.height(20.dp))
+                        Spacer(modifier = Modifier.height(20.sdp))
                     }
 
                     CartItem(cartItem,
@@ -168,9 +170,9 @@ fun CartContent(
                             navigateToProductDetails(path, selectedQuantity)
                         })
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.sdp))
 
-                    HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                    HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
                 }
             } else {
@@ -182,22 +184,22 @@ fun CartContent(
                         modifier = Modifier.fillMaxSize(1f)
                     ) {
 
-                        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
-                        Spacer(modifier = Modifier.height(250.dp))
+                        Spacer(modifier = Modifier.height(250.sdp))
 
                         Image(
                             painter = painterResource(id = R.drawable.empty_cart),
                             contentDescription = "add products to cart"
                         )
 
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(10.sdp))
 
                         Text(
                             text = "Your cart is empty",
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 25.sp,
+                            fontSize = 25.ssp,
                             color = greyLabels,
                         )
                     }
@@ -218,20 +220,20 @@ fun CartContent(
 
                     viewModel.sendProductToStripeForPayment()
                 },
-                shape = RoundedCornerShape(19.dp),
+                shape = RoundedCornerShape(19.sdp),
                 colors = ButtonDefaults.buttonColors(greenPrimary),
                 modifier = Modifier
                     .fillMaxWidth(1f)
-                    .height(65.dp)
+                    .height(65.sdp)
                     .align(Alignment.CenterHorizontally)
             ) {
 
-                Spacer(modifier = Modifier.width(20.dp))
+                Spacer(modifier = Modifier.width(20.sdp))
                 Text(
                     text = "Go to Checkout",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
+                    fontSize = 18.ssp,
                     color = Color.White
                 )
 
@@ -241,11 +243,11 @@ fun CartContent(
                     text = "LE " + viewModel.cartTotalAmount.value.toString(),
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
+                    fontSize = 18.ssp,
                     color = Color.White
                 )
 
-                Spacer(modifier = Modifier.width(20.dp))
+                Spacer(modifier = Modifier.width(20.sdp))
 
             }
         }
@@ -253,7 +255,7 @@ fun CartContent(
 
     Box (modifier = Modifier
         .fillMaxSize(1f)
-        .padding(20.dp)){
+        .padding(20.sdp)){
 
 
 

@@ -24,6 +24,8 @@ import com.example.domain.model.Product
 import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyLabels
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun FavouriteItem(product: Product, openProductDetails:()->Unit){
@@ -39,24 +41,24 @@ fun FavouriteItem(product: Product, openProductDetails:()->Unit){
             modifier = Modifier.fillMaxWidth(0.2f),
             contentScale = ContentScale.FillWidth)
 
-        Spacer(modifier = Modifier.width(20.dp))
+        Spacer(modifier = Modifier.width(20.sdp))
 
         Column {
             Text(
                 text = product.name?:"",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.Black
             )
 
-            Spacer(modifier = Modifier.height(7.dp))
+            Spacer(modifier = Modifier.height(7.sdp))
 
             Text(
                 text = product.unit?:"",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Medium,
-                fontSize = 16.sp,
+                fontSize = 16.ssp,
                 color = greyLabels
             )
         }
@@ -67,7 +69,7 @@ fun FavouriteItem(product: Product, openProductDetails:()->Unit){
             text = product.price.toString()+ " LE",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
         )
 

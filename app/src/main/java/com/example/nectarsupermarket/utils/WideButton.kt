@@ -24,18 +24,18 @@ fun WideButton(buttonText:String,onButtonClick:()->Unit){
 
             onButtonClick()
         },
-        shape = RoundedCornerShape(19.dp),
+        shape = RoundedCornerShape(19.sdp),
         colors = ButtonDefaults.buttonColors(greenPrimary),
         modifier = Modifier
             .fillMaxWidth(1f)
-            .height(65.dp)
+            .height(65.sdp)
     ) {
 
         Text(
             text = buttonText,
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 18.sp,
+            fontSize = 18.ssp,
             color = Color.White
         )
 

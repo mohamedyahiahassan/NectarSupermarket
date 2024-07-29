@@ -32,7 +32,9 @@ import com.example.domain.model.CartITem
 import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyLabels
+import com.example.nectarsupermarket.utils.sdp
 import com.example.nectarsupermarket.utils.shimmerEffect
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun CartItem(
@@ -67,7 +69,7 @@ fun CartItem(
 
         )
 
-        Spacer(modifier = Modifier.width(20.dp))
+        Spacer(modifier = Modifier.width(20.sdp))
 
         Column {
 
@@ -87,18 +89,18 @@ fun CartItem(
                         text = cartITem?.product?.name?:"",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp,
+                        fontSize = 18.ssp,
                         color = Color.Black,
                         modifier = Modifier.align(Alignment.Start)
                     )
 
-                    Spacer(modifier = Modifier.height(7.dp))
+                    Spacer(modifier = Modifier.height(7.sdp))
 
                     Text(
                         text = cartITem?.product?.unit?:"",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
+                        fontSize = 16.ssp,
                         color = greyLabels,
                         modifier = Modifier.align(Alignment.Start)
                     )
@@ -123,7 +125,7 @@ fun CartItem(
 
             }
 
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(10.sdp))
 
 
             Row(
@@ -137,8 +139,8 @@ fun CartItem(
                     },
                     colors = IconButtonDefaults.iconButtonColors(Color.Transparent),
                     modifier = Modifier
-                        .background(Color.Transparent, RoundedCornerShape(17.dp))
-                        .border(1.dp, greyLabels, RoundedCornerShape(17.dp))
+                        .background(Color.Transparent, RoundedCornerShape(17.sdp))
+                        .border(1.sdp, greyLabels, RoundedCornerShape(17.sdp))
 
                 ) {
 
@@ -155,9 +157,9 @@ fun CartItem(
                         text = cartITem.quantitySelected.toString(),
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 20.sp,
+                        fontSize = 20.ssp,
                         color = Color.Black,
-                        modifier = Modifier.padding(start = 20.dp, end = 20.dp)
+                        modifier = Modifier.padding(start = 20.sdp, end = 20.sdp)
                     )
                 }
 
@@ -167,8 +169,8 @@ fun CartItem(
                     },
                     colors = IconButtonDefaults.iconButtonColors(Color.Transparent),
                     modifier = Modifier
-                        .background(Color.Transparent, RoundedCornerShape(17.dp))
-                        .border(1.dp, greyLabels, RoundedCornerShape(17.dp))
+                        .background(Color.Transparent, RoundedCornerShape(17.sdp))
+                        .border(1.sdp, greyLabels, RoundedCornerShape(17.sdp))
 
                 ) {
 
@@ -187,7 +189,7 @@ fun CartItem(
                         text = cartITem?.totalPrice.toString() + " LE",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 20.sp,
+                        fontSize = 20.ssp,
                         color = Color.Black
                     )
                 }

@@ -36,6 +36,8 @@ import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.ui.theme.greyBorder
 import com.example.nectarsupermarket.ui.theme.greyLabels
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:()->Unit, removeOnClick:()->Unit) {
@@ -48,9 +50,8 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
     Card(
         colors = CardDefaults.cardColors(Color.Transparent),
         modifier = Modifier
-            .border(2.dp, greyBorder, RoundedCornerShape(18.dp))
-            .clip(RoundedCornerShape(18.dp))
-            //.padding(start = 15.dp, end = 15.dp, bottom = 15.dp)
+            .border(2.sdp, greyBorder, RoundedCornerShape(18.sdp))
+            .clip(RoundedCornerShape(18.sdp))
             .aspectRatio(0.7f),
         onClick = {
         onProductClick()
@@ -60,13 +61,13 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
             model = product?.image,
             contentDescription = "product image",
             modifier = Modifier
-                .padding(start = 15.dp, end = 15.dp)
+                .padding(start = 15.sdp, end = 15.sdp)
                 .fillMaxHeight(0.55f)
                 .align(Alignment.CenterHorizontally),
             contentScale = ContentScale.FillHeight
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(10.sdp))
 
         Text(
             text = product?.name.toString(),
@@ -74,23 +75,23 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
             fontWeight = FontWeight.Bold,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
             modifier = Modifier
-                .padding(start = 15.dp)
+                .padding(start = 15.sdp)
                 .align(Alignment.Start)
         )
 
-        // Spacer(modifier = Modifier.height(1.dp))
+        // Spacer(modifier = Modifier.height(1.sdp))
 
         Text(
             text = product?.unit.toString(),
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 14.sp,
+            fontSize = 14.ssp,
             color = greyLabels,
             modifier = Modifier
-                .padding(start = 15.dp)
+                .padding(start = 15.sdp)
                 .align(Alignment.Start)
         )
 
@@ -98,13 +99,13 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
 
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(start = 15.dp, end = 15.dp, bottom = 15.dp)
+                modifier = Modifier.padding(start = 15.sdp, end = 15.sdp, bottom = 15.sdp)
             ) {
                 Text(
                     text = product?.price.toString() + " LE",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
+                    fontSize = 18.ssp,
                     color = Color.Black
                 )
                 Spacer(modifier = Modifier.weight(1f))
@@ -127,7 +128,7 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
 
                     },
                     colors = IconButtonDefaults.iconButtonColors(greenPrimary),
-                    modifier = Modifier.background(greenPrimary, RoundedCornerShape(17.dp))
+                    modifier = Modifier.background(greenPrimary, RoundedCornerShape(17.sdp))
 
                 ) {
 
@@ -141,6 +142,8 @@ fun ProductItemOverview(product: Product?, onProductClick:()->Unit, onAddClick:(
 
                 }
             }
+
+        Spacer(modifier = Modifier.height(15.sdp))
 
 
     }

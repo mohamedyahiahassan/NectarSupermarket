@@ -1,6 +1,7 @@
 package com.example.data.FirebaseDataSource
 
 import android.net.Uri
+import android.util.Log
 import com.example.data.FirebaseConstants
 import com.example.domain.model.AppUser
 import com.example.domain.contract.User
@@ -98,9 +99,13 @@ class FirebaseAuthenticationRepoImpl @Inject constructor(
 
             val response =  firebaseAuth.createUserWithEmailAndPassword(email,password).await()
 
-            val user =  AppUser(uid = response.user?.uid,email = response.user?.email)
+            val user =  AppUser(uid = response.user?.uid,email = email)
 
             User.appUser = user
+
+            Log.e("app user sign up",User.appUser.toString())
+
+            Log.e("user data",user.email.toString())
 
             Resource.Success(user)
 

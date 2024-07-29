@@ -19,6 +19,7 @@ import com.example.nectarsupermarket.navigation.NectarNavigationGraph
 import com.example.nectarsupermarket.logIn.LoginViewModel
 import com.example.nectarsupermarket.ui.theme.NectarSupermarketTheme
 import com.example.nectarsupermarket.utils.ShowSnackBar
+import com.example.nectarsupermarket.utils.sdp
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
@@ -71,7 +72,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    ShowSnackBar(viewmodel.visible.value,Modifier.padding(bottom = 40.dp).align(Alignment.BottomCenter))
+                    ShowSnackBar(viewmodel.visible.value,Modifier.padding(bottom = 1.sdp).align(Alignment.BottomCenter))
 
                 }
             }

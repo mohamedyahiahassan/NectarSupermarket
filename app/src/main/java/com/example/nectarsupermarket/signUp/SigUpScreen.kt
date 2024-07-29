@@ -32,6 +32,8 @@ import com.example.nectarsupermarket.utils.WideButton
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.nectarsupermarket.utils.LoadingDialog
 import com.example.nectarsupermarket.R
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,54 +53,54 @@ fun SignUpContent(viewModel: SignUpViewModel = viewModel(), onSignInClicked:()->
         modifier = Modifier
             .fillMaxSize(1f)
             .background(Color.White)
-            .padding(top = windowInsets.asPaddingValues().calculateTopPadding(), start = 20.dp, end = 20.dp)
+            .padding(top = windowInsets.asPaddingValues().calculateTopPadding(), start = 20.dp, end = 20.sdp)
 
 
     ) {
 
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(50.sdp))
 
         Image(
             painter = painterResource(id = R.drawable.logo_carrot_colored) ,
             contentDescription = "colored_logo",
-            modifier = Modifier.size(80.dp),
+            modifier = Modifier.size(80.sdp),
             //    contentScale = ContentScale.FillWidth
         )
 
-        Spacer(modifier = Modifier.height(80.dp))
+        Spacer(modifier = Modifier.height(80.sdp))
 
         Text(
             text = "Sign Up",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 26.sp,
+            fontSize = 26.ssp,
             color = Color.Black,
             modifier = Modifier.align(Alignment.Start)
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(10.sdp))
 
         Text(
             text = "Enter your credentials to continue",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = greyLabels,
             modifier = Modifier.align(Alignment.Start)
         )
 
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
         LoginTextField(viewModel.email,label = "Email", isEmail = true, error = viewModel.emailError)
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
         LoginTextField(viewModel.password,label = "Password", isPassword = true, error = viewModel.passwordError)
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(35.sdp))
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         WideButton(buttonText = "Sign Up",
             onButtonClick = {
@@ -107,7 +109,7 @@ fun SignUpContent(viewModel: SignUpViewModel = viewModel(), onSignInClicked:()->
 
         })
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         MultiStyleText(
             text1 = "Already have an account? ",

@@ -73,7 +73,7 @@ fun ShowSnackBar(visible:Boolean,modifier: Modifier) {
         ElevatedCard(
             modifier = Modifier
                 .fillMaxWidth(1f),
-            shape = RoundedCornerShape(2.dp),
+            shape = RoundedCornerShape(2.sdp),
             colors = CardDefaults.cardColors(containerColor = Color.Red)
         ) {
 
@@ -87,14 +87,14 @@ fun ShowSnackBar(visible:Boolean,modifier: Modifier) {
                 Image(
                     painter = painterResource(id = R.drawable.baseline_cloud_off_24),
                     contentDescription = "No internet Connection Icon",
-                    Modifier.size(35.dp))
+                    Modifier.size(35.sdp))
                 Text(
                     text = "Internet Connection Lost!",
                     color = Color.White,
                     fontFamily = gilroyFont,
-                    fontSize = 18.sp,
+                    fontSize = 18.ssp,
                     modifier = Modifier
-                        .padding(20.dp)
+                        .padding(20.sdp)
 
                 )
 

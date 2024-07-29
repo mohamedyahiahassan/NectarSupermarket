@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.domain.model.Product
+import com.example.nectarsupermarket.utils.sdp
 
 
 @Composable
@@ -36,12 +37,12 @@ fun ProductListContent(
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(15.dp),
-        horizontalArrangement = Arrangement.spacedBy(15.dp),
+        verticalArrangement = Arrangement.spacedBy(15.sdp),
+        horizontalArrangement = Arrangement.spacedBy(15.sdp),
         modifier = Modifier
             .fillMaxSize(1f)
             .background(Color.White)
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
 
     ) {
 

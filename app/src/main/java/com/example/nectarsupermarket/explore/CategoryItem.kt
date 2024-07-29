@@ -24,7 +24,9 @@ import coil.compose.AsyncImage
 import com.example.domain.model.CategoriesItem
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
+import com.example.nectarsupermarket.utils.sdp
 import com.example.nectarsupermarket.utils.shimmerEffect
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Composable
@@ -36,8 +38,8 @@ fun CategoryItem(categoriesItem: CategoriesItem?=null, color: Color? = null, isL
         modifier = Modifier
            // .fillMaxWidth(0.45f)
             .aspectRatio(1f)
-            .background(color?: greenPrimary, RoundedCornerShape(18.dp))
-            .clip(RoundedCornerShape(18.dp))
+            .background(color?: greenPrimary, RoundedCornerShape(18.sdp))
+            .clip(RoundedCornerShape(18.sdp))
             .shimmerEffect(isLoading)
             .clickable {
 
@@ -59,10 +61,10 @@ fun CategoryItem(categoriesItem: CategoriesItem?=null, color: Color? = null, isL
             text = categoriesItem?.name.toString(),
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(start = 20.dp, end = 20.dp)
+            modifier = Modifier.padding(start = 20.sdp, end = 20.sdp)
            // overflow = TextOverflow.Clip
         )
         Spacer(modifier = Modifier.weight(1f))

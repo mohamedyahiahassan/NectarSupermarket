@@ -24,16 +24,16 @@ fun LoadingDialog(isLoading: MutableState<Boolean>){
         Dialog(onDismissRequest = { }) {
             Box(
                 modifier = Modifier
-                    .height(100.dp)
-                    .width(100.dp)
-                    .background(Color.White, shape = RoundedCornerShape(8.dp)),
+                    .height(100.sdp)
+                    .width(100.sdp)
+                    .background(Color.White, shape = RoundedCornerShape(8.sdp)),
                 contentAlignment = Alignment.Center
             ) {
                 CircularProgressIndicator(
                     color = greenPrimary,
                     modifier = Modifier
-                        .width(35.dp)
-                        .height(35.dp)
+                        .width(35.sdp)
+                        .height(35.sdp)
                 )
             }
         }

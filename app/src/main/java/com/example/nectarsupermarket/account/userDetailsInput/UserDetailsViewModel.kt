@@ -74,8 +74,6 @@ class UserDetailsViewModel @Inject constructor(
         }
     }
 
-
-
     fun addUserToDatabaseCheck():Boolean{
 
         nameValidation()
@@ -145,13 +143,7 @@ class UserDetailsViewModel @Inject constructor(
 
                     is Resource.Success -> {
 
-                        Log.e("inside Resourse sucess image link",it.data.toString())
-
-                        Log.e("1",it.data?.path.toString())
-
                         imageDownloadLink = it.data
-
-                        Log.e("image",imageDownloadLink.toString())
 
                         isLoading.value =false
                     }
@@ -173,13 +165,13 @@ class UserDetailsViewModel @Inject constructor(
 
                     uid = User.appUser?.uid,
                     firstName = username.value,
-                    email = User.user?.email,
+                    email = User.appUser?.email,
                     userImage = imageDownloadLink.toString(),
                     phoneNumber = mobileNumber.value,
                     latitude = locationLatLng?.latitude.toString(),
                     longitude = locationLatLng?.latitude.toString(),
                     selectedAddress = readableAddress.value,
-                    selectedAddressPath = "/users/${User.user?.uid}/addresses/${readableAddress.value}"
+                    selectedAddressPath = "/users/${User.appUser?.uid}/addresses/${readableAddress.value}"
                 )
 
 

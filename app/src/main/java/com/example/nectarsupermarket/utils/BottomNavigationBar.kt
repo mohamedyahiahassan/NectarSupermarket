@@ -81,7 +81,7 @@ fun BottomNavigationBar(currentDestination: NavDestination?, onNavBarItemClick:(
                                 text = navigationItem.name.toString(),
                                 fontFamily = gilroyFont,
                                 fontWeight = FontWeight.SemiBold,
-                                fontSize = 12.sp,
+                                fontSize = 12.ssp,
                                 color = if (currentDestination?.hierarchy?.any {
 
                                         it.route == navigationItem.route ||
@@ -105,14 +105,14 @@ fun BottomNavigationBar(currentDestination: NavDestination?, onNavBarItemClick:(
                                         id = navigationItem.selectedImage ?: 0
                                     ),
                                     contentDescription = "${navigationItem.name} selected icon ",
-                                    modifier = Modifier.size(24.dp)
+                                    modifier = Modifier.size(24.sdp)
                                 )
                             } else {
 
                                 Image(
                                     painterResource(id = navigationItem.unSelectedImage ?: 0),
                                     contentDescription = "${navigationItem.name} icon",
-                                    modifier = Modifier.size(24.dp)
+                                    modifier = Modifier.size(24.sdp)
                                 )
                             }
 

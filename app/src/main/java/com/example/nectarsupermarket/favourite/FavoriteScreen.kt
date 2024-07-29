@@ -36,6 +36,8 @@ import com.example.nectarsupermarket.ui.theme.greyBorder
 import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.utils.LoadingDialog
 import com.example.nectarsupermarket.utils.SwipeToDeleteContainer
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Composable
@@ -60,7 +62,7 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
             .fillMaxHeight(1f)
             .background(Color.White)
             .verticalScroll(rememberScrollState())
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
         ,
     ) {
 
@@ -68,7 +70,7 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
             modifier = Modifier
                 .fillMaxWidth(1f)
                 .weight(1f),
-            verticalArrangement = Arrangement.spacedBy(20.dp)
+            verticalArrangement = Arrangement.spacedBy(20.sdp)
 
         ) {
 
@@ -91,9 +93,9 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
 
                     if (index == 0) {
 
-                        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
-                        Spacer(modifier = Modifier.height(20.dp))
+                        Spacer(modifier = Modifier.height(20.sdp))
                     }
 
 
@@ -112,9 +114,9 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
                     }
 
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.sdp))
 
-                    HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                    HorizontalDivider(color = greyBorder, thickness = 1.sdp)
                 }
 
             } else if (viewModel.favouriteList.isEmpty() == true) {
@@ -127,23 +129,23 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
                     ) {
 
 
-                        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+                        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
-                        Spacer(modifier = Modifier.height(250.dp))
+                        Spacer(modifier = Modifier.height(250.sdp))
 
                         Image(
                             painter = painterResource(id = R.drawable.baseline_favorite_24),
                             contentDescription = "add products to cart",
-                            modifier = Modifier.size(100.dp)
+                            modifier = Modifier.size(100.sdp)
                         )
 
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(10.sdp))
 
                         Text(
                             text = "Your favourite list is empty",
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 25.sp,
+                            fontSize = 25.ssp,
                             color = greyLabels,
                         )
                     }
@@ -163,11 +165,11 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
                 onClick = {
                     viewModel.addAllFavouritesToCart()
                 },
-                shape = RoundedCornerShape(19.dp),
+                shape = RoundedCornerShape(19.sdp),
                 colors = ButtonDefaults.buttonColors(greenPrimary),
                 modifier = Modifier
                     .fillMaxWidth(1f)
-                    .height(65.dp)
+                    .height(65.sdp)
                     .align(Alignment.CenterHorizontally)
             ) {
 
@@ -175,7 +177,7 @@ fun FavoriteContent(viewModel: FavouriteViewModel, navigateToCart:()->Unit){
                     text = "Add All to Cart",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
+                    fontSize = 18.ssp,
                     color = Color.White
                 )
 

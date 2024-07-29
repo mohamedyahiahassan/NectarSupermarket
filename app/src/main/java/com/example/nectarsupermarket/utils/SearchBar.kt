@@ -39,11 +39,11 @@ fun NectarSearchBar(searchQuery:MutableState<String>,searchActive:MutableState<B
         onValueChange ={
             searchQuery.value = it
         },
-        shape = RoundedCornerShape(25.dp),
+        shape = RoundedCornerShape(25.sdp),
         singleLine = true,
         modifier = Modifier
             .fillMaxWidth(1f)
-            .height(56.dp)
+            .height(56.sdp)
 
         ,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
@@ -60,7 +60,7 @@ fun NectarSearchBar(searchQuery:MutableState<String>,searchActive:MutableState<B
 
             Text(
                 text = "What do you search for?",
-                fontSize = 14.sp,
+                fontSize = 14.ssp,
                 color = Color.Black,
             )
         },
@@ -75,43 +75,4 @@ fun NectarSearchBar(searchQuery:MutableState<String>,searchActive:MutableState<B
         )
 
     )
-
-
-    /*   SearchBar(
-           query = searchQuery.value,
-           onQueryChange = {
-               searchQuery.value = it
-           },
-           onSearch = {
-               // what to do when searching
-           }, active =
-           searchActive.value, onActiveChange = {
-               searchActive.value = it
-           },
-           leadingIcon = {
-               Image(
-                   painter = painterResource(id = R.drawable.search_icon),
-                   contentDescription = "search icon"
-               )
-           },
-           placeholder = {
-               Text(
-                   text = "Search Store",
-                   fontFamily = gilroyFont,
-                   fontWeight = FontWeight.SemiBold,
-                   fontSize = 14.sp,
-                   color = greyLabels,
-
-               )
-           },
-           colors = SearchBarDefaults.colors(containerColor = greyLabels2),
-           modifier = Modifier
-               .padding(top = 1.dp)
-               .fillMaxWidth(1f)
-               .background(Color.Transparent)
-       ) {
-
-       }
-
-     */
 }

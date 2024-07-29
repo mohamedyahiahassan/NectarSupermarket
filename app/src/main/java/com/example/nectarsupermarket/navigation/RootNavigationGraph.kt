@@ -168,7 +168,7 @@ fun NectarNavigationGraph(startDestination:Any){
 
                     openAddressBook = {
 
-                        navController.navigate(AddressBookScreen)
+                        navController.navigate(AddNewAddressScreen)
                     },
                     navigateToApp = {
 
@@ -180,26 +180,10 @@ fun NectarNavigationGraph(startDestination:Any){
 
             }
 
-            composable<AddressBookScreen> {
-
-                val viewModel = hiltViewModel<AddressViewModel>()
-
-                AddressesBookContent(
-                    viewModel,
-                    addNewOrEditAddress = {
-
-                        navController.navigate(AddNewAddressScreen)
-                    })
-
-            }
-
             composable<AddNewAddressScreen> {
 
-                val parentEntry = remember(it) {
-                    navController.getBackStackEntry(AddressBookScreen)
-                }
 
-                val viewModel = hiltViewModel<AddressViewModel>(parentEntry)
+                val viewModel = hiltViewModel<AddressViewModel>()
 
                 var address:String? = null
 
@@ -234,54 +218,8 @@ fun NectarNavigationGraph(startDestination:Any){
 
                     navController.popBackStack()
                 }
-
             }
-
-            /*
-            composable<UserDetailsScreen> {
-
-                val viewModel = hiltViewModel<UserDetailsViewModel>()
-
-                var address:String? = null
-
-                if (navController.currentBackStackEntry!!.savedStateHandle.contains("key")){
-
-                    address = navController.currentBackStackEntry!!.savedStateHandle.get<String>("key")
-                }
-
-                UserDetailsContent(
-                    viewModel,
-
-                    openAddressBook = {
-                        navController.navigate(MapsScreen)
-                    },
-                    navigateToApp = {
-
-                        navController.navigate(HomeApp){
-                                popUpTo(0)
-                            }
-
-                    })
-
-            }
-
-            composable<MapsScreen> {
-
-                val viewModel = viewModel<MapViewModel>()
-
-                MapsContent(viewModel) {address->
-
-                    navController.previousBackStackEntry?.savedStateHandle?.set("key",address)
-
-                    navController.popBackStack()
-                }
-
-            }
-
-            */
-
         }
-
 
         navigation<HomeApp>(startDestination = GoToAppScreens){
 

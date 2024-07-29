@@ -2,6 +2,7 @@ package com.example.nectarsupermarket.account.userLocation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.CardDefaults
@@ -29,6 +32,8 @@ import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.utils.WideButton
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Composable
@@ -71,8 +76,9 @@ fun InputAddressContent(
         modifier = Modifier
             .fillMaxSize(1f)
             .background(Color.White)
-            .padding(start = 20.dp, end = 20.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+            .verticalScroll(rememberScrollState())
+            .padding(start = 20.sdp, end = 20.sdp),
+        verticalArrangement = Arrangement.spacedBy(10.sdp)
     ) {
 
         Spacer(modifier = Modifier.weight(1f))
@@ -91,36 +97,44 @@ fun InputAddressContent(
         ElevatedCard(
 
             colors = CardDefaults.elevatedCardColors(Color.White),
+            modifier = Modifier.height(100.sdp),
             onClick = {
                 openMaps()
 
             }) {
 
             Row (
-                modifier = Modifier.fillMaxWidth(1f),
+                modifier = Modifier.fillMaxSize(1f),
                 verticalAlignment = Alignment.CenterVertically
             ){
 
-                Image(Icons.Filled.LocationOn, contentDescription = "location change icon")
+                if (viewModel.readableAddress.value.isNullOrEmpty()){
 
-                Text(
-                    text = viewModel.readableAddress.value?:"",
-                    fontFamily = gilroyFont,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
-                    color = Color.Black
-                )
+                    Spacer(modifier = Modifier.weight(1f))
 
-                Spacer(modifier = Modifier.weight(1f))
+                    Image(Icons.Filled.LocationOn, contentDescription = "location change icon")
 
-                Text(
-                    text = "change",
-                    fontFamily = gilroyFont,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 18.sp,
-                    color = greenPrimary
-                )
+                    Text(
+                        text = "Select Your Location",
+                        fontFamily = gilroyFont,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 18.ssp,
+                        color = Color.Black)
 
+                    Spacer(modifier = Modifier.weight(1f))
+
+                } else{
+
+                    Image(Icons.Filled.LocationOn, contentDescription = "location change icon")
+
+                    Text(
+                        text = viewModel.readableAddress.value?:"",
+                        fontFamily = gilroyFont,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 18.ssp,
+                        color = Color.Black
+                    )
+                }
 
             }
         }
@@ -217,7 +231,7 @@ fun InputAddressContent(
             },
             modifier = Modifier.fillMaxWidth(1f))
 
-        Spacer(modifier = Modifier.height(1.dp))
+        Spacer(modifier = Modifier.height(1.sdp))
 
         WideButton(buttonText = "Save Address") {
 

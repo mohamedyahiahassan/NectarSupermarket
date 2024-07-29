@@ -32,6 +32,8 @@ import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.utils.WideButton
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Composable
@@ -52,9 +54,9 @@ fun OrderFailedDialog(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .aspectRatio(0.6f)
-                    .background(Color.White, RoundedCornerShape(18.dp))
-                    .clip(RoundedCornerShape(18.dp))
-                    .padding(start = 20.dp, end = 20.dp)
+                    .background(Color.White, RoundedCornerShape(18.sdp))
+                    .clip(RoundedCornerShape(18.sdp))
+                    .padding(start = 20.sdp, end = 20.sdp)
             ) {
 
                 IconButton(
@@ -69,7 +71,7 @@ fun OrderFailedDialog(
 
                 }
 
-                Spacer(modifier = Modifier.height(50.dp))
+                Spacer(modifier = Modifier.height(50.sdp))
                 Image(
                     painter = painterResource(id = R.drawable.order_pack_image),
                     contentDescription = "order failed",
@@ -77,29 +79,29 @@ fun OrderFailedDialog(
                     modifier = Modifier.fillMaxWidth(0.6f)
                 )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(30.sdp))
 
                 Text(
                     text = "Oops! Order Failed",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 28.sp,
+                    fontSize = 28.ssp,
                     color = Color.Black,
                     textAlign = TextAlign.Center
                 )
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(20.sdp))
 
                 Text(
                     text = "Something went wrong.",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 16.sp,
+                    fontSize = 16.ssp,
                     color = greyLabels,
                     textAlign = TextAlign.Center
                 )
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(20.sdp))
 
                 WideButton(buttonText = "Try Again") {
 

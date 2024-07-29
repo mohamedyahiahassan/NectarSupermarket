@@ -41,6 +41,8 @@ import com.example.nectarsupermarket.ui.theme.greyLabels
 import com.example.nectarsupermarket.ui.theme.greyLabels2
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.nectarsupermarket.ui.theme.greyBorder
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun AccountContent(
@@ -52,16 +54,16 @@ fun AccountContent(
 
     Column (
         modifier = Modifier.background(Color.White),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+        verticalArrangement = Arrangement.spacedBy(10.sdp)
     ){
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         User.appUser?.let { AccountNameEmail(it) }
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(10.sdp))
 
-        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
 
         AccountItem(item = Constants.listOfAccountSections[0]){
@@ -69,7 +71,7 @@ fun AccountContent(
                     openOrdersList()
         }
 
-        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
 
         AccountItem(item = Constants.listOfAccountSections[1]){
@@ -77,20 +79,20 @@ fun AccountContent(
             openUserDetails()
         }
 
-        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
         AccountItem(item = Constants.listOfAccountSections[2]){
 
                 openAddressBook()
         }
 
-        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
         AccountItem(item = Constants.listOfAccountSections[6]){
 
         }
 
-        HorizontalDivider(color = greyBorder, thickness = 1.dp)
+        HorizontalDivider(color = greyBorder, thickness = 1.sdp)
 
         AccountItem(item = Constants.listOfAccountSections[7]){
 
@@ -107,25 +109,25 @@ fun AccountContent(
                 navigateToRoot()
 
             },
-            shape = RoundedCornerShape(19.dp),
+            shape = RoundedCornerShape(19.sdp),
             colors = ButtonDefaults.buttonColors(greyLabels2),
             modifier = Modifier
-                .padding(start = 20.dp, end = 20.dp)
+                .padding(start = 20.sdp, end = 20.sdp)
                 .fillMaxWidth(1f)
-                .height(65.dp)
+                .height(65.sdp)
         ) {
 
             Text(
                 text = "Log Out",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = greenPrimary
             )
 
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
 
     }
@@ -137,7 +139,7 @@ fun AccountNameEmail(user: AppUser) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
             .fillMaxWidth(1f)) {
 
         if(user.userImage == null){
@@ -146,8 +148,8 @@ fun AccountNameEmail(user: AppUser) {
                 contentDescription = "account pic",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(64.dp)
-                    .clip(RoundedCornerShape(27.dp))
+                    .size(64.sdp)
+                    .clip(RoundedCornerShape(27.sdp))
 
             )
         } else {
@@ -157,29 +159,29 @@ fun AccountNameEmail(user: AppUser) {
                 contentDescription = "account pic",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(64.dp)
-                    .clip(RoundedCornerShape(27.dp))
+                    .size(64.sdp)
+                    .clip(RoundedCornerShape(27.sdp))
 
             )
         }
 
 
-        Spacer(modifier = Modifier.width(20.dp))
+        Spacer(modifier = Modifier.width(20.sdp))
 
         Column {
 
             Text(
-                text = User.appUser?.firstName.toString(),
+                text = User.appUser?.firstName?:"",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
+                fontSize = 20.ssp,
                 color = Color.Black,
             )
             Text(
-                text = User.appUser?.email.toString(),
+                text = User.appUser?.email?:"",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 16.sp,
+                fontSize = 16.ssp,
                 color = greyLabels,
             )
         }
@@ -191,7 +193,7 @@ fun AccountItem(item: AccountItem,onAccountItemClick:()->Unit){
 
     Row (
         modifier = Modifier
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
             .fillMaxWidth(1f)
             .clickable {
                 onAccountItemClick()
@@ -201,16 +203,16 @@ fun AccountItem(item: AccountItem,onAccountItemClick:()->Unit){
 
         Image(painter = painterResource(id = item.image?:0),
             contentDescription = "account item image",
-            modifier = Modifier.size(24.dp),
+            modifier = Modifier.size(24.sdp),
             )
 
-        Spacer(modifier = Modifier.width(20.dp))
+        Spacer(modifier = Modifier.width(20.sdp))
 
         Text(
             text = item.name.toString(),
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 18.sp,
+            fontSize = 18.ssp,
             color = Color.Black
         )
 
@@ -224,7 +226,7 @@ fun AccountItem(item: AccountItem,onAccountItemClick:()->Unit){
             Image(
                 painter = painterResource(id = R.drawable.arrow_forward_icon),
                 contentDescription = "go to product from favourite",
-                modifier = Modifier.size(18.dp))
+                modifier = Modifier.size(18.sdp))
         }
 
 

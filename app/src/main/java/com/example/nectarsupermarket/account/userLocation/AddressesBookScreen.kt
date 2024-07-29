@@ -32,6 +32,8 @@ import com.example.domain.contract.User
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyBorder
 import com.example.nectarsupermarket.utils.WideButton
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 
 @Composable
@@ -53,17 +55,17 @@ fun AddressesBookContent(
         modifier = Modifier
             .background(Color.White)
             .fillMaxSize(1f)
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
 
     ) {
         
         if (User.appUser==null){
             
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(30.sdp))
         }
 
         LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(10.sdp),
 
             ) {
 
@@ -76,7 +78,7 @@ fun AddressesBookContent(
                         modifier = Modifier
                             .fillMaxWidth(1f),
                         colors = CardDefaults.cardColors(Color.White),
-                        border = BorderStroke(1.dp, greyBorder),
+                        border = BorderStroke(1.sdp, greyBorder),
                         onClick = {
 
                             viewModel.selectedAddress.value = address
@@ -88,36 +90,36 @@ fun AddressesBookContent(
                         Column(
                             modifier = Modifier
                                 .fillMaxWidth(1f)
-                                .padding(20.dp)
+                                .padding(20.sdp)
                         ) {
 
                             Text(
                                 text = address.label ?: "",
                                 fontFamily = gilroyFont,
                                 fontWeight = FontWeight.SemiBold,
-                                fontSize = 20.sp,
+                                fontSize = 20.ssp,
                                 color = Color.Black,
                                 modifier = Modifier.align(Alignment.Start)
                             )
 
-                            Spacer(modifier = Modifier.height(20.dp))
+                            Spacer(modifier = Modifier.height(20.sdp))
 
 
                             Text(
                                 text = address.buildingNo + "," + address.street,
                                 fontFamily = gilroyFont,
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 18.sp,
+                                fontSize = 18.ssp,
                                 color = Color.Black,
                             )
 
-                            Spacer(modifier = Modifier.height(20.dp))
+                            Spacer(modifier = Modifier.height(20.sdp))
 
                             Text(
                                 text = address.district + "," + address.city,
                                 fontFamily = gilroyFont,
                                 fontWeight = FontWeight.Medium,
-                                fontSize = 18.sp,
+                                fontSize = 18.ssp,
                                 color = Color.Black,
                             )
                         }
@@ -135,7 +137,7 @@ fun AddressesBookContent(
 
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
     }
 }
 

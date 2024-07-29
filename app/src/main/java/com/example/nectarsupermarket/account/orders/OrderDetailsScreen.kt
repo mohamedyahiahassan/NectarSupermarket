@@ -30,8 +30,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.ui.theme.greyBorder
@@ -58,7 +59,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
             .fillMaxSize(1f)
             .background(Color.White)
             .verticalScroll(rememberScrollState())
-            .padding(20.dp)
+            .padding(20.sdp)
     ) {
 
         Row(
@@ -71,7 +72,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                 text = "# ${viewModel.selectedOrder.value?.orderName}",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
+                fontSize = 16.ssp,
                 color = Color.Black,
             )
 
@@ -81,13 +82,13 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
 
 
                 OutlinedButton(
-                    shape = RoundedCornerShape(5.dp),
-                    border = BorderStroke(1.dp, Color.Red),
+                    shape = RoundedCornerShape(5.sdp),
+                    border = BorderStroke(1.sdp, Color.Red),
                     contentPadding = PaddingValues(
-                        start = 15.dp,
-                        end = 15.dp,
-                        top = 7.dp,
-                        bottom = 7.dp
+                        start = 15.sdp,
+                        end = 15.sdp,
+                        top = 7.sdp,
+                        bottom = 7.sdp
                     ),
 
                     onClick = {
@@ -103,7 +104,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                         text = "Track Order",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 14.sp,
+                        fontSize = 14.ssp,
                         color = Color.Red,
                     )
 
@@ -111,7 +112,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                         Icons.Filled.PlayArrow,
                         contentDescription = "track order",
                         tint = Color.Red,
-                        modifier = Modifier.size(18.dp)
+                        modifier = Modifier.size(18.sdp)
                     )
                 }
 
@@ -122,7 +123,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                     text = "Delivered",
                     fontFamily = gilroyFont,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
+                    fontSize = 16.ssp,
                     color = greenPrimary,
                 )
             }
@@ -136,17 +137,17 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                 .substringBeforeLast(":"),
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         Text(
             text = "DeliveredTo",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
         )
 
@@ -154,20 +155,20 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
             text = viewModel.readableAddress,
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = Color.Black,
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
-        HorizontalDivider(thickness = 1.dp, color = greyBorder)
+        HorizontalDivider(thickness = 1.sdp, color = greyBorder)
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         Column(
             modifier = Modifier
                 .fillMaxWidth(1f),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
+            verticalArrangement = Arrangement.spacedBy(10.sdp)
         ) {
 
             viewModel.listOfProductsInSelectedOrder?.forEach {
@@ -181,19 +182,19 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                         text = "${it[4]}x",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
+                        fontSize = 16.ssp,
                         color = Color.Black,
                     )
 
-                    Spacer(modifier = Modifier.width(20.dp))
+                    Spacer(modifier = Modifier.width(20.sdp))
 
                     AsyncImage(
                         model = it[0],
                         contentDescription = "product image",
-                        modifier = Modifier.size(40.dp)
+                        modifier = Modifier.size(40.sdp)
                     )
 
-                    Spacer(modifier = Modifier.width(20.dp))
+                    Spacer(modifier = Modifier.width(20.sdp))
 
                     Column(
                     ) {
@@ -202,7 +203,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                             text = it[1],
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 16.sp,
+                            fontSize = 16.ssp,
                             color = Color.Black,
                         )
 
@@ -210,7 +211,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                             text = it[2],
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
+                            fontSize = 14.ssp,
                             color = greyLabels,
                         )
                     }
@@ -221,7 +222,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                         text = "LE ${it[3]}",
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.Medium,
-                        fontSize = 16.sp,
+                        fontSize = 16.ssp,
                         color = Color.Black,
                     )
 
@@ -231,11 +232,11 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
         }
 
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
-        HorizontalDivider(thickness = 1.dp, color = greyBorder)
+        HorizontalDivider(thickness = 1.sdp, color = greyBorder)
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
 
         Row(
             modifier = Modifier.fillMaxWidth(1f)
@@ -245,7 +246,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                 text = "Total:",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.Black,
             )
 
@@ -255,7 +256,7 @@ fun OrderDetailsContent(viewModel: OrderViewModel, trackOrder:(orderNumber:Strin
                 text = "LE ${viewModel.selectedOrder.value?.totalPrice}",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.Black,
             )
         }

@@ -88,7 +88,7 @@ fun LoginTextField(
         Text(
             text = label,
             color = greyLabels,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold
             )
@@ -97,7 +97,7 @@ fun LoginTextField(
             onValueChange = {
                 text.value = it
             },
-            textStyle = LocalTextStyle.current.copy(fontSize = 16.sp, fontFamily = gilroyFont, fontWeight = FontWeight.Medium),
+            textStyle = LocalTextStyle.current.copy(fontSize = 16.ssp, fontFamily = gilroyFont, fontWeight = FontWeight.Medium),
             modifier = Modifier
                 .fillMaxWidth(1f),
             interactionSource = interactionSource,
@@ -132,7 +132,7 @@ fun LoginTextField(
 
 
             },
-            contentPadding = PaddingValues(0.dp),
+            contentPadding = PaddingValues(0.sdp),
             visualTransformation = if (passwordVisibility.value == false)  VisualTransformation.None else PasswordVisualTransformation(),
             trailingIcon = {
                 if (isPassword == true) {

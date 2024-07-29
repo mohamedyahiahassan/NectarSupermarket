@@ -160,7 +160,6 @@ class OrderViewModel @Inject constructor(
     fun getReadableLocation(context:Context){
 
         val geocoder = Geocoder(context)
-
         val geocoderAddress = geocoder.getFromLocation(selectedOrder.value?.latitude?.toDouble()?:0.0,selectedOrder.value?.longitude?.toDouble()?:0.0,1)
 
 

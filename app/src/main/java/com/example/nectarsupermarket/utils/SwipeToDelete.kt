@@ -93,7 +93,7 @@ fun DeleteBackground(
         modifier = Modifier
             .fillMaxSize()
             .background(color)
-            .padding(16.dp),
+            .padding(16.sdp),
         contentAlignment = Alignment.CenterEnd
     ) {
         Icon(

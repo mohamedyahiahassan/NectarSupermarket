@@ -26,6 +26,8 @@ import com.example.nectarsupermarket.R
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greenPrimary
 import com.example.nectarsupermarket.ui.theme.greyWhite
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 
 @Composable
 fun OnBoarding(onGetStartedClicked:()->Unit){
@@ -49,13 +51,13 @@ fun OnBoarding(onGetStartedClicked:()->Unit){
             modifier = Modifier.fillMaxWidth(0.12f),
             contentScale = ContentScale.FillWidth)
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
         
         Text(
             text = "Welcome" + "\n" + "to our store",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 48.sp,
+            fontSize = 48.ssp,
             color = Color.White,
             textAlign = TextAlign.Center,
             lineHeight = 48.sp
@@ -65,17 +67,17 @@ fun OnBoarding(onGetStartedClicked:()->Unit){
             text = "Get your groceries in as fast as one hour",
             fontFamily = gilroyFont,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = 16.ssp,
             color = greyWhite
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.sdp))
         
         Button(
             onClick = {
                 onGetStartedClicked()
             },
-            shape = RoundedCornerShape(19.dp),
+            shape = RoundedCornerShape(19.sdp),
             colors = ButtonDefaults.buttonColors(greenPrimary),
             modifier = Modifier
                 .fillMaxWidth(0.85f)
@@ -86,7 +88,7 @@ fun OnBoarding(onGetStartedClicked:()->Unit){
                 text = "Get Started",
                 fontFamily = gilroyFont,
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 18.sp,
+                fontSize = 18.ssp,
                 color = Color.White
             )
             

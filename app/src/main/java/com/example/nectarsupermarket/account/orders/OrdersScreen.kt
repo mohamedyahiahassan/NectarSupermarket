@@ -30,8 +30,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.nectarsupermarket.utils.sdp
+import com.example.nectarsupermarket.utils.ssp
 import com.example.nectarsupermarket.ui.theme.gilroyFont
 import com.example.nectarsupermarket.ui.theme.greyBorder
 
@@ -49,11 +50,11 @@ fun OrdersScreenContent(
     }
 
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.sdp),
         modifier = Modifier
             .background(Color.White)
             .fillMaxSize(1f)
-            .padding(start = 20.dp, end = 20.dp)
+            .padding(start = 20.sdp, end = 20.sdp)
     ) {
 
 
@@ -64,7 +65,7 @@ fun OrdersScreenContent(
                 modifier = Modifier
                     .fillMaxWidth(1f),
                 colors = CardDefaults.cardColors(Color.White),
-                border = BorderStroke(1.dp, greyBorder),
+                border = BorderStroke(1.sdp, greyBorder),
                 onClick = {
 
                     viewModel.selectedOrder.value = order
@@ -80,7 +81,7 @@ fun OrdersScreenContent(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth(1f)
-                        .padding(20.dp)
+                        .padding(20.sdp)
                 ) {
 
                     Text(
@@ -88,12 +89,12 @@ fun OrdersScreenContent(
                             .substringBeforeLast(":"),
                         fontFamily = gilroyFont,
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 20.sp,
+                        fontSize = 20.ssp,
                         color = Color.Black,
                         modifier = Modifier.align(Alignment.Start)
                     )
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.sdp))
 
                     Row(
                         modifier = Modifier.fillMaxWidth(1f)
@@ -103,7 +104,7 @@ fun OrdersScreenContent(
                             text = if (order.listOfOrderItems?.size == 1) "${order.listOfOrderItems?.size} item" else "${order.listOfOrderItems?.size} items",
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 18.sp,
+                            fontSize = 18.ssp,
                             color = Color.Black,
                         )
 
@@ -113,16 +114,16 @@ fun OrdersScreenContent(
                             text = "LE ${order.totalPrice}",
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.Medium,
-                            fontSize = 18.sp,
+                            fontSize = 18.ssp,
                             color = Color.Black,
                         )
                     }
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.sdp))
 
-                    HorizontalDivider(thickness = 1.dp, color = greyBorder)
+                    HorizontalDivider(thickness = 1.sdp, color = greyBorder)
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(20.sdp))
 
 
                     if (order.orderStatus == 4) {
@@ -131,19 +132,19 @@ fun OrdersScreenContent(
                             text = "Delivered",
                             fontFamily = gilroyFont,
                             fontWeight = FontWeight.SemiBold,
-                            fontSize = 20.sp,
+                            fontSize = 20.ssp,
                             color = Color.Green,
                         )
                     } else {
 
                         OutlinedButton(
-                            shape = RoundedCornerShape(5.dp),
-                            border = BorderStroke(1.dp, Color.Red),
+                            shape = RoundedCornerShape(5.sdp),
+                            border = BorderStroke(1.sdp, Color.Red),
                             contentPadding = PaddingValues(
-                                start = 15.dp,
-                                end = 15.dp,
-                                top = 7.dp,
-                                bottom = 7.dp
+                                start = 15.sdp,
+                                end = 15.sdp,
+                                top = 7.sdp,
+                                bottom = 7.sdp
                             ),
 
                             onClick = {
@@ -156,7 +157,7 @@ fun OrdersScreenContent(
                                 text = "Track Order",
                                 fontFamily = gilroyFont,
                                 fontWeight = FontWeight.SemiBold,
-                                fontSize = 14.sp,
+                                fontSize = 14.ssp,
                                 color = Color.Red,
                             )
 
@@ -164,7 +165,7 @@ fun OrdersScreenContent(
                                 Icons.Filled.PlayArrow,
                                 contentDescription = "track order",
                                 tint = Color.Red,
-                                modifier = Modifier.size(18.dp)
+                                modifier = Modifier.size(18.sdp)
                             )
                         }
                     }

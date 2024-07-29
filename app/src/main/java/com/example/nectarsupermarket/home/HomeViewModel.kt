@@ -63,8 +63,6 @@ class HomeViewModel @Inject constructor(
 
                                     if (offersItem != null) {
 
-                                        Log.e("refrene", it.data.toString())
-
                                         getProductsInsideFavouriteList(
                                             offersItem.referenceInFireStore.toString(),
                                             it.data!!.size,
