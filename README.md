@@ -30,3 +30,9 @@ Key Features:
   * Firebase Authentication: Used for safe and secure authentication of users and access to their data.
   * Firebase Database: Used as database for the whole app including the supermarket database.
   * Firebase Storage: Used as storage service for all media used within the project.
+ 
+# Video
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/v3KQWInWoK4/0.jpg)](https://www.youtube.com/watch?v=v3KQWInWoK4)
+
+
