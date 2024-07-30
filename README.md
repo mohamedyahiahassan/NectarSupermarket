@@ -12,6 +12,7 @@ Key Features:
 * Secure checkout process with Stripe integration
 * Order history and tracking
 * Locate Users Location Using Google Maps API
+* Receive Push notifications for offers or order update
 
 # Built With 🛠
 
